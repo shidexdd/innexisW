@@ -2865,7 +2865,7 @@ end ]]
                         Script.SilentAim.Part = BodyParts[math.random(0, #BodyParts)]
                     end
                 else
-                    -- finopa was here
+                    -- shidexdd was here
                     TargetPart.CFrame = CFrame.new(9999, 9999, 9999)
                 end
 
