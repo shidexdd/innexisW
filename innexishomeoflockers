@@ -351,7 +351,7 @@ local LocalMouse = LocalPlayer:GetMouse()
 local Script = {
     Main = {
         Speed = false,
-        SpeedPower = 2.5,
+        SpeedPower = 3.0,
         SpeedType = "CFrame",
         InfiniteJump = false,
         FakeMacro = false
@@ -371,6 +371,11 @@ local Script = {
         JitterBot = false,
         SpinBot = false,
         SpinBotSpeed = 7
+    },
+    SkyAntiAim = {
+        Enabled = false,
+        Keybind = "", 
+        Amount = false, 
     },
     Desync = {
         Velocity = {
