@@ -2528,7 +2528,7 @@ LPH_JIT_ULTRA(
                         local Pos, OnScreen = CC:WorldToViewportPoint(getgenv().CLT.Character.Head.Position)
                         if OnScreen and Script.CamLock.Enabled then
                             if Script.CamLock.Resolver then
-                                getgenv().Main =
+                                getgenv().local =
                                     CFrame.new(
                                     CC.CFrame.p,
                                     getgenv().CLT.Character[Script.CamLock.Part].Position +
@@ -2536,13 +2536,13 @@ LPH_JIT_ULTRA(
                                 )
                                 CC.CFrame =
                                     CC.CFrame:Lerp(
-                                    getgenv().Main,
+                                    getgenv().local,
                                     Script.CamLock.Smoothness,
                                     Enum.EasingStyle.Elastic,
                                     Enum.EasingDirection.InOut
                                 )
                             else
-                                getgenv().Main =
+                                getgenv().local =
                                     CFrame.new(
                                     CC.CFrame.p,
                                     getgenv().CLT.Character[Script.CamLock.Part].Position +
@@ -2550,7 +2550,7 @@ LPH_JIT_ULTRA(
                                 )
                                 CC.CFrame =
                                     CC.CFrame:Lerp(
-                                    getgenv().Main,
+                                    getgenv().local,
                                     Script.CamLock.Smoothness,
                                     Enum.EasingStyle.Elastic,
                                     Enum.EasingDirection.InOut
