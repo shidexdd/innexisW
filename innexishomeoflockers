@@ -539,7 +539,7 @@ local RandomShitTalk = {
         "有的东西给了他，所以他不那rblx trader captain么有的东西给了他爱欠绝参加锻squidward炼，务，却拒绝参加锻炼，这让他爱得更UGT少了",
         "wocky slush他爱欠债了他他squilliam拥有的东西给爱欠绝参加锻squidward炼",
         "坐下，一直保持着安静的状态 谁把他拥有的东西给了他，所以他不那rblx trader captain么有的东西给了他爱欠债了他他squilliam拥有的东西给爱欠绝参加锻squidward炼，务，却拒绝参加锻炼，这让他爱得更UGT少了",
-        "免费手榴弹 hack绕过作弊工作DA HOOD roblox nub瞄准无声目标绕过2020工作真正免费下载和使用",
+        "免费手榴弹 hack绕过作弊工作DA HOOD roblox aimbot瞄准无声目标绕过2020工作真正免费下载和使用",
         "zal發明了roblox汽車貿易商的船長ro blocks，並將其洩漏到整個宇宙，還修補了虛假的角神模式和虛假的身體，還發明了基於速度的AUTOWALL和無限制的自動壁紙遊戲 ",
         "彼が誤って禁止されたためにファントムからautowallgamingを禁止解除する請願とそれはでたらめですそれはまったく意味がありませんなぜあなたは合法的なプレーヤーを禁止するのですか ",
         "ジェイソンは私が神に誓う女性的な男の子ではありません ",
@@ -653,7 +653,7 @@ local Window = Library:CreateWindow("INNEXIS", Vector2.new(492, 598), Enum.KeyCo
 
 --// Tabs
 local Main = Window:CreateTab("Main")
-local AimBot = Window:CreateTab("AimBot")
+local Rage = Window:CreateTab("Rage")
 local Misc = Window:CreateTab("Misc")
 local Visuals = Window:CreateTab("Visuals")
 local Settings = Window:CreateTab("Settings")
@@ -671,7 +671,7 @@ local h = Visuals:CreateSector("Self Visuals", "right")
 local j = Main:CreateSector("Target Strafe", "left")
 local k = Rage:CreateSector("Ragebot", "left")
 local l = Visuals:CreateSector("World Visuals", "right")
-local n = AimBot:CreateSector("AimLock", "left")
+local n = Rage:CreateSector("Aimlock", "left")
 local o = Rage:CreateSector("FOV", "right")
 local p = Misc:CreateSector("Auto Buys", "left")
 local q = Misc:CreateSector("Animations", "left")
@@ -2865,7 +2865,7 @@ end ]]
                         Script.SilentAim.Part = BodyParts[math.random(0, #BodyParts)]
                     end
                 else
-                    -- shidexdd was the blackest of his time
+                    -- shidexdd was here
                     TargetPart.CFrame = CFrame.new(9999, 9999, 9999)
                 end
 
