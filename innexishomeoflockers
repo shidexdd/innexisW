@@ -653,7 +653,7 @@ local Window = Library:CreateWindow("INNEXIS", Vector2.new(492, 598), Enum.KeyCo
 
 --// Tabs
 local Main = Window:CreateTab("Main")
-local Rage = Window:CreateTab("Rage")
+local AimLock = Window:CreateTab("AimLock")
 local Misc = Window:CreateTab("Misc")
 local Visuals = Window:CreateTab("Visuals")
 local Settings = Window:CreateTab("Settings")
