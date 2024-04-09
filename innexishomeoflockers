@@ -370,16 +370,11 @@ local Script = {
     AntiAims = {
         JitterBot = false,
         SpinBot = false,
-        SpinBotSpeed = 7
-    },
-    SkyAntiAim = {
-        Enabled = false,
-        Keybind = "", 
-        Amount = false, 
+        SpinBotSpeed = 7 
     },
     Desync = {
         Velocity = {
-            Desync = false,
+            Desync(AntiLock) = false,
             Unhittable = false,
             Visualize = false,
             VisualizeColor = Color3.fromRGB(255, 0, 125),
