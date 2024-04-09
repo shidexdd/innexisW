@@ -482,7 +482,7 @@ local Script = {
     },
     Settings = {
         Watermark = true,
-        fpscap = 144,
+        fpscap = 240,
         Type = "Main",
         CheatName = "INNEXIS"
         --game:GetService("CoreGui").INNEXIS.main.top.title
@@ -649,7 +649,7 @@ function createvisualizer()
     Visualizer:Destroy()
 end
 
-local Window = Library:CreateWindow("INNEXIS", Vector2.new(492, 598), Enum.KeyCode.RightShift)
+local Window = Library:CreateWindow("INNEXIS", Vector2.new(500, 698), Enum.KeyCode.RightShift)
 
 --// Tabs
 local Main = Window:CreateTab("Main")
@@ -705,7 +705,7 @@ a:AddSlider(
     "Speed",
     0,
     1,
-    100,
+    200,
     1,
     function(Value)
         Script.Main.SpeedPower = Value / 40
@@ -1598,7 +1598,7 @@ l:AddToggle(
         BulletTracers = Boolean
     end
 ):AddColorpicker(
-    Color3.fromRGB(255, 0, 0),
+    Color3.fromRGB(46.1086, 78.9623, 29.7943),
     function(Color)
         BulletTracerColor = Color
     end
