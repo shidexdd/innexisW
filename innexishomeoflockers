@@ -652,9 +652,9 @@ end
 local Window = Library:CreateWindow("INNEXIS", Vector2.new(492, 598), Enum.KeyCode.RightShift)
 
 --// Tabs
-local Main = Window:CreateTab("Main")
-local Rage = Window:CreateTab("Rage")
-local Misc = Window:CreateTab("Misc")
+local Local = Window:CreateTab("Local")
+local AimLock = Window:CreateTab("AimLock")
+local Stuff = Window:CreateTab("Stuff")
 local Visuals = Window:CreateTab("Visuals")
 local Settings = Window:CreateTab("Settings")
 
@@ -705,7 +705,7 @@ a:AddSlider(
     "Speed",
     0,
     1,
-    100,
+    200,
     1,
     function(Value)
         Script.Main.SpeedPower = Value / 40
