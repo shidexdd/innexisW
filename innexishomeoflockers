@@ -349,7 +349,7 @@ local LocalMouse = LocalPlayer:GetMouse()
 --// Main Table
 
 local Script = {
-    Main = {
+    Local = {
         Speed = false,
         SpeedPower = 2.5,
         SpeedType = "CFrame",
@@ -399,7 +399,7 @@ local Script = {
     ShitTalk = {
         Enabled = false,
         Delay = 2,
-        Type = "Main"
+        Type = "Local"
         --[[
         Emoji
         Chinese
