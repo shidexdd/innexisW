@@ -652,27 +652,27 @@ end
 local Window = Library:CreateWindow("INNEXIS", Vector2.new(492, 598), Enum.KeyCode.RightShift)
 
 --// Tabs
-local Local = Window:CreateTab("Local")
-local AimLock = Window:CreateTab("AimLock")
+local Main = Window:CreateTab("Main")
+local Rage = Window:CreateTab("Rage")
 local Misc = Window:CreateTab("Misc")
 local Visuals = Window:CreateTab("Visuals")
 local Settings = Window:CreateTab("Settings")
 
 --// Sectors
-local a = Local:CreateSector("Movement", "left")
-local b = Local:CreateSector("Anti Aim", "right")
+local a = Main:CreateSector("Movement", "left")
+local b = Main:CreateSector("Anti Aim", "right")
 local c = Misc:CreateSector("Misc", "left")
 local d = Misc:CreateSector("Shit Talk", "right")
 local e = Misc:CreateSector("Cursor", "right")
-local f = AimLock:CreateSector("Target Aim", "left")
-local g = AimLock:CreateSector("Part", "right")
-local i = AimLock:CreateSector("Tracer", "right")
+local f = Rage:CreateSector("Target Aim", "left")
+local g = Rage:CreateSector("Part", "right")
+local i = Rage:CreateSector("Tracer", "right")
 local h = Visuals:CreateSector("Self Visuals", "right")
-local j = Local:CreateSector("Target Strafe", "left")
-local k = AimLock:CreateSector("AimLock", "left")
+local j = Main:CreateSector("Target Strafe", "left")
+local k = Rage:CreateSector("Ragebot", "left")
 local l = Visuals:CreateSector("World Visuals", "right")
-local n = AimLock:CreateSector("Aimlock", "left")
-local o = AimLock:CreateSector("FOV", "right")
+local n = Rage:CreateSector("Aimlock", "left")
+local o = Rage:CreateSector("FOV", "right")
 local p = Misc:CreateSector("Auto Buys", "left")
 local q = Misc:CreateSector("Animations", "left")
 
@@ -716,7 +716,7 @@ a:AddToggle(
     "Infinite Jump",
     false,
     function(Boolean)
-        Script.Local.InfiniteJump = Boolean
+        Script.Main.InfiniteJump = Boolean
 
         if Script.Main.InfiniteJump then
             LocalPlayer.Character.Humanoid.UseJumpPower = false
@@ -738,9 +738,9 @@ a:AddToggle(
     "Fake Macro",
     false,
     function(Boolean)
-        Script.Local.FakeMacro = Boolean
+        Script.Main.FakeMacro = Boolean
 
-        if Script.Local.FakeMacro then
+        if Script.Main.FakeMacro then
             local Dance = game:GetService("ReplicatedStorage").ClientAnimations.Crouching
             LoadedAnim = LocalPlayer.Character.Humanoid:LoadAnimation(Dance)
             LoadedAnim:Play()
@@ -2536,13 +2536,13 @@ LPH_JIT_ULTRA(
                                 )
                                 CC.CFrame =
                                     CC.CFrame:Lerp(
-                                    getgenv().Local,
+                                    getgenv().Main,
                                     Script.CamLock.Smoothness,
                                     Enum.EasingStyle.Elastic,
                                     Enum.EasingDirection.InOut
                                 )
                             else
-                                getgenv().Local =
+                                getgenv().Main =
                                     CFrame.new(
                                     CC.CFrame.p,
                                     getgenv().CLT.Character[Script.CamLock.Part].Position +
@@ -2550,7 +2550,7 @@ LPH_JIT_ULTRA(
                                 )
                                 CC.CFrame =
                                     CC.CFrame:Lerp(
-                                    getgenv().Local,
+                                    getgenv().Main,
                                     Script.CamLock.Smoothness,
                                     Enum.EasingStyle.Elastic,
                                     Enum.EasingDirection.InOut
@@ -2653,15 +2653,15 @@ LPH_JIT_ULTRA(
                     end
                 end
 
-                if Script.Local.Speed then
-                    if Script.Local.SpeedType == "CFrame" then
+                if Script.Main.Speed then
+                    if Script.Main.SpeedType == "CFrame" then
                         LocalPlayer.Character.HumanoidRootPart.CFrame =
                             LocalPlayer.Character.HumanoidRootPart.CFrame +
-                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Local.SpeedPower
-                    elseif Script.Local.SpeedType == "BHop" then
+                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Main.SpeedPower
+                    elseif Script.Main.SpeedType == "BHop" then
                         LocalPlayer.Character.HumanoidRootPart.CFrame =
                             LocalPlayer.Character.HumanoidRootPart.CFrame +
-                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Local.SpeedPower
+                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Main.SpeedPower
                         if
                             LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 and
                                 LocalPlayer.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.Freefall
@@ -2865,7 +2865,7 @@ end ]]
                         Script.SilentAim.Part = BodyParts[math.random(0, #BodyParts)]
                     end
                 else
-                    -- shidexdd  was the blackest boy
+                    -- shidexdd was the blackest of his time
                     TargetPart.CFrame = CFrame.new(9999, 9999, 9999)
                 end
 
@@ -2877,15 +2877,15 @@ end ]]
 
         RunService.heartbeat:Connect(
             function()
-                if Script.Local.Speed and Script.Desync.CFrame.Desync then
-                    if Script.Local.SpeedType == "CFrame" then
+                if Script.Main.Speed and Script.Desync.CFrame.Desync then
+                    if Script.Main.SpeedType == "CFrame" then
                         LocalPlayer.Character.HumanoidRootPart.CFrame =
                             LocalPlayer.Character.HumanoidRootPart.CFrame +
-                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Local.SpeedPower
-                    elseif Script.Local.SpeedType == "BHop" then
+                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Main.SpeedPower
+                    elseif Script.Main.SpeedType == "BHop" then
                         LocalPlayer.Character.HumanoidRootPart.CFrame =
                             LocalPlayer.Character.HumanoidRootPart.CFrame +
-                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Local.SpeedPower
+                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Main.SpeedPower
                         if
                             LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 and
                                 LocalPlayer.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.Freefall
