@@ -659,20 +659,20 @@ local Visuals = Window:CreateTab("Visuals")
 local Settings = Window:CreateTab("Settings")
 
 --// Sectors
-local a = Main:CreateSector("Movement", "left")
-local b = Main:CreateSector("Anti Aim", "right")
+local a = Local:CreateSector("Movement", "left")
+local b = Local:CreateSector("Anti Aim", "right")
 local c = Misc:CreateSector("Misc", "left")
 local d = Misc:CreateSector("Shit Talk", "right")
 local e = Misc:CreateSector("Cursor", "right")
-local f = Rage:CreateSector("Target Aim", "left")
-local g = Rage:CreateSector("Part", "right")
-local i = Rage:CreateSector("Tracer", "right")
+local f = AimLock:CreateSector("Target Aim", "left")
+local g = AimLock:CreateSector("Part", "right")
+local i = AimLock:CreateSector("Tracer", "right")
 local h = Visuals:CreateSector("Self Visuals", "right")
-local j = Main:CreateSector("Target Strafe", "left")
-local k = Rage:CreateSector("Ragebot", "left")
+local j = Local:CreateSector("Target Strafe", "left")
+local k = AimLock:CreateSector("AimLock", "left")
 local l = Visuals:CreateSector("World Visuals", "right")
-local n = Rage:CreateSector("Aimlock", "left")
-local o = Rage:CreateSector("FOV", "right")
+local n = AimLock:CreateSector("Aimlock", "left")
+local o = AimLock:CreateSector("FOV", "right")
 local p = Misc:CreateSector("Auto Buys", "left")
 local q = Misc:CreateSector("Animations", "left")
 
@@ -2536,13 +2536,13 @@ LPH_JIT_ULTRA(
                                 )
                                 CC.CFrame =
                                     CC.CFrame:Lerp(
-                                    getgenv().Main,
+                                    getgenv().Local,
                                     Script.CamLock.Smoothness,
                                     Enum.EasingStyle.Elastic,
                                     Enum.EasingDirection.InOut
                                 )
                             else
-                                getgenv().Main =
+                                getgenv().Local =
                                     CFrame.new(
                                     CC.CFrame.p,
                                     getgenv().CLT.Character[Script.CamLock.Part].Position +
@@ -2550,7 +2550,7 @@ LPH_JIT_ULTRA(
                                 )
                                 CC.CFrame =
                                     CC.CFrame:Lerp(
-                                    getgenv().Main,
+                                    getgenv().Local,
                                     Script.CamLock.Smoothness,
                                     Enum.EasingStyle.Elastic,
                                     Enum.EasingDirection.InOut
@@ -2653,15 +2653,15 @@ LPH_JIT_ULTRA(
                     end
                 end
 
-                if Script.Main.Speed then
-                    if Script.Main.SpeedType == "CFrame" then
+                if Script.Local.Speed then
+                    if Script.Local.SpeedType == "CFrame" then
                         LocalPlayer.Character.HumanoidRootPart.CFrame =
                             LocalPlayer.Character.HumanoidRootPart.CFrame +
-                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Main.SpeedPower
-                    elseif Script.Main.SpeedType == "BHop" then
+                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Local.SpeedPower
+                    elseif Script.Local.SpeedType == "BHop" then
                         LocalPlayer.Character.HumanoidRootPart.CFrame =
                             LocalPlayer.Character.HumanoidRootPart.CFrame +
-                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Main.SpeedPower
+                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Local.SpeedPower
                         if
                             LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 and
                                 LocalPlayer.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.Freefall
@@ -2877,15 +2877,15 @@ end ]]
 
         RunService.heartbeat:Connect(
             function()
-                if Script.Main.Speed and Script.Desync.CFrame.Desync then
-                    if Script.Main.SpeedType == "CFrame" then
+                if Script.Local.Speed and Script.Desync.CFrame.Desync then
+                    if Script.Local.SpeedType == "CFrame" then
                         LocalPlayer.Character.HumanoidRootPart.CFrame =
                             LocalPlayer.Character.HumanoidRootPart.CFrame +
-                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Main.SpeedPower
-                    elseif Script.Main.SpeedType == "BHop" then
+                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Local.SpeedPower
+                    elseif Script.Local.SpeedType == "BHop" then
                         LocalPlayer.Character.HumanoidRootPart.CFrame =
                             LocalPlayer.Character.HumanoidRootPart.CFrame +
-                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Main.SpeedPower
+                            LocalPlayer.Character.Humanoid.MoveDirection * Script.Local.SpeedPower
                         if
                             LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 and
                                 LocalPlayer.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.Freefall
